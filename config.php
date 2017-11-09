@@ -1,5 +1,5 @@
 <?php
 
-define('BASEURL', $_SERVER['DOCUMENT_ROOT'].'/ajax_project6/');
+define('BASEURL', $_SERVER['DOCUMENT_ROOT'].'/oop2/');
 
 ?>

@@ -1,6 +1,6 @@
 <?php
 
-require_once $_SERVER['DOCUMENT_ROOT'].'/ajax_project6/core/init.php';
+require_once $_SERVER['DOCUMENT_ROOT'].'/oop2/core/init.php';
 
 if(isset($_SESSION['loggedin'])){
 	header("location:home.php");

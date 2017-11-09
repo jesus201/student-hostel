@@ -7,9 +7,9 @@ if(mysqli_connect_errno()){
 	echo "error connecting ". mysqli_connect_errno();
 	die();
 }
-require_once $_SERVER['DOCUMENT_ROOT'].'/ajax_project6/config.php';
+require_once $_SERVER['DOCUMENT_ROOT'].'/oop2/config.php';
 
-require_once BASEURL. 'controllers/helpers.php';
+
 
 
 
@@ -20,6 +20,20 @@ require_once BASEURL. 'controllers/helpers.php';
 
      $masterfname=$row['fname'];
      $masterlname=$row['lname'];
+     
+     include(BASEURL."classes/DateValidator.php");
+     $datevalidator = new DateValidator();
+
+     include(BASEURL."classes/DisplayData.php");
+     $displayData = new DisplayData($con, $userloggedin);
+     
+   
+     include(BASEURL."classes/Validation.php");
+     $validation = new Validation($con, $userloggedin);
+
+     
+
+
  }
 
 

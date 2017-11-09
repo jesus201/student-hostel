@@ -1,6 +1,6 @@
 <?php
 
-require_once $_SERVER['DOCUMENT_ROOT'].'/ajax_project6/core/init.php';
+require_once $_SERVER['DOCUMENT_ROOT'].'/oop2/core/init.php';
 
 if(!isset($_SESSION['loggedin'])){
 	header("location:index.php");
@@ -108,8 +108,9 @@ body{
                        <th>HOUSEMASTER_ID</th>
                     </tr>
                 </thead>
-                <tbody id="display_ajaxdata">
+                <tbody id="display_ajaxdata2">
                   <?php while ($row=mysqli_fetch_assoc($sql)):?>
+                
                     <tr>
                       <td><a href='edit_student.php?edit=<?=$row['student_id']?>' title='edit'><i class='fa fa-pencil-square-o text-primary' aria-hidden='true'></i></a></td>
                       <td><a href='home.php?delete=<?=$row['student_id']?>' title='delete'><i class='fa fa-trash-o text-danger' aria-hidden='true'></i></a></td>
@@ -120,7 +121,7 @@ body{
                       <td><?=$row['st_birthdate'];?></td>
                       <td><?=$row['id_number'];?></td>
                       <td><?=$row['st_telnumber'];?></td>
-                      <td><?=date_time($row['st_dateregister']);?></td>
+                      <td><?=$datevalidator->set_pretty_date($row['st_dateregister']);?></td>
                       <td><?=$row['house_master_id'];?></td>
                     </tr>
 
@@ -185,7 +186,7 @@ body{
 
 
                         //display student data
-                       jQuery("#display_ajaxdata").append(data2);
+                       jQuery("#display_ajaxdata2").append(data2);
            		
 
            		
